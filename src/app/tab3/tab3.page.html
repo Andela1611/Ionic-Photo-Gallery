@@ -1,17 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Cocktails
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="true" scrollY="true">
+  <ion-content>
+    <ion-card *ngFor="let drink of news.drinks">
+      <ion-card-header>
+        <ion-card-title>{{drink.strDrink}}</ion-card-title>
+        <ion-card-subtitle>
+          {{drink.strIngredient1}},{{drink.strIngredient2}},{{drink.strIngredient3}},{{drink.strIngredient4}},{{drink.strIngredient5}},
+          {{drink.strIngredient6}}
+        </ion-card-subtitle>
+        <ion-card-content>{{drink.strInstructions}}</ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </ion-content>
 </ion-content>
